@@ -7,13 +7,19 @@ figure{
     flex-direction: column;
     justify-content: center;
     align-items:  center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
     
 }
 
 img {
     height: 200px;
     width: 200px;
+    transform: rotate3d(0, 1, 0, 360deg);; /* Inicialmente no rotada */
+  transition: transform 50s ease; /* Transición suave de 0.5 segundos */
 }
+    
+
 
 #app{
     display: flex;
