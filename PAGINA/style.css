@@ -2,7 +2,8 @@ figure{
     width: 300px;
     height: 320px;
     border: 1px solid rgba(0, 0, 0, 0.496);
-    border-radius: 10px ;
+    background-color: rgb(95, 83, 225);
+    border-radius: 20px ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +17,7 @@ img {
     height: 200px;
     width: 200px;
     transform: rotate3d(0, 1, 0, 360deg);; /* rotacion eje y , una vuelta*/
-    transition: transform 40s ease; /*transicion */
+    /*transition: transform 40s ease; /*transicion */
 }
     
 
@@ -26,6 +27,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgb(105, 98, 98);
+    
+    background-image: url('./img/background.jpg');
     
 }
