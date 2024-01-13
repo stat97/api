@@ -15,8 +15,8 @@ figure{
 img {
     height: 200px;
     width: 200px;
-    transform: rotate3d(0, 1, 0, 360deg);; /*Rotacion eje y , 360 grados
-  transition: transform 40s ease; 
+    transform: rotate3d(0, 1, 0, 360deg);; /* rotacion eje y , una vuelta*/
+    transition: transform 40s ease; /*transicion */
 }
     
 
