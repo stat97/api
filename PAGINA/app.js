@@ -21,7 +21,7 @@ const getData = async () => {
       const coin = arrayCoins[i].name;
       const response = await fetch(`https://api.coincap.io/v2/assets/${coin}`);
       const result = await response.json();
-      const formattedPrice = parseFloat(result.data.priceUsd).toFixed(2)
+      const formattedPrice = parseFloat(result.data.priceUsd).toFixed(2) // metodo para formatear precio
       data.push({
         id: result.data.id,
         priceUsd: formattedPrice,
