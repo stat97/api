@@ -16,7 +16,7 @@ img {
     height: 200px;
     width: 200px;
     transform: rotate3d(0, 1, 0, 360deg);; /* Inicialmente no rotada */
-  transition: transform 50s ease; /* Transición suave de 0.5 segundos */
+  transition: transform 40s ease; /* Transición suave de 0.5 segundos */
 }
     
 
