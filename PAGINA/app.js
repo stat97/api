@@ -1,6 +1,6 @@
 const getData = async () => {
-  try {
-    const data = [];
+  
+    const data = []; //array vacio para push
     const arrayCoins = [
       { name: "bitcoin", image: "./img/btc.png" },
       { name: "ethereum", image: "./img/eth.png" },
@@ -30,9 +30,7 @@ const getData = async () => {
     }
 
     mappeoDato(data);
-  } catch (error) {
-    console.error("Error al obtener datos:", error);
-  }
+  
 };
 
 const mappeoDato = (data) => {
