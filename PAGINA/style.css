@@ -7,18 +7,25 @@ figure {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  }
-  figure:hover{
- 
+}
+#api{
+    text-decoration: none;
+}
+figure:hover {
   background-color: #b58ac0;
-  }
-  
-
+}
+#button{
+    background-color: transparent
+    border-radius 30px;
+    color:blueviolet;
+    border-radius: 20px solid rgba(0,0,0,0);
+}
 img {
+padding-top: 25px;
   height: 200px;
   width: 200px;
   transform: rotateY(0deg); /* Rotación inicial en el eje Y */
-  animation: rotateAnimation 40s linear infinite; /*para que roten todo el tiempo las monedas*/
+  animation: rotateAnimation 60s linear infinite; /*para que roten todo el tiempo las monedas*/
 }
 
 @keyframes rotateAnimation {
