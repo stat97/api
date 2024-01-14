@@ -35,6 +35,14 @@ img {
     justify-content: center;
     align-items: center;
     
+}
+body{
+    
     background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-position: center;
     
 }
+
+
+
