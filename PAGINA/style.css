@@ -16,7 +16,7 @@ img {
     height: 200px;
     width: 200px;
     transform: rotateY(0deg) ; /* Rotación inicial en el eje Y */
-    animation: rotateAnimation 15s linear infinite; /*para que roten todo el tiempo las monedas*/
+    animation: rotateAnimation 40s linear infinite; /*para que roten todo el tiempo las monedas*/
     
     
 }
