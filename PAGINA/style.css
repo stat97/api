@@ -15,8 +15,16 @@ figure{
 img {
     height: 200px;
     width: 200px;
-    transform: rotate3d(0, 1, 0, 360deg);; /* rotacion eje y , una vuelta*/
-    transition: transform 40s ease; /*transicion */
+    transform: rotateY(0deg) ; /* Rotación inicial en el eje Y */
+    animation: rotateAnimation 15s linear infinite; /*para que roten todo el tiempo las monedas*/
+    
+    
+}
+
+@keyframes rotateAnimation {
+    100% {
+        transform: rotateY(360deg); /* Rotación completa en el eje Y */
+    }
 }
     
 
