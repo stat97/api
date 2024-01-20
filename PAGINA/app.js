@@ -19,12 +19,14 @@ const getData = async () => {
     const coin = arrayCoins[i].name;
     const response = await fetch(`https://api.coincap.io/v2/assets/${coin}`);
     const result = await response.json();
-    const formattedPrice = parseFloat(result.data.priceUsd).toFixed(2); // metodo para formatear precio
+    const formattedPrice = parseFloat(result.data.priceUsd).toFixed(2);
+    const formattedPricePercent = parseFloat(result.data.changePercent24Hr).toFixed(2); // metodo para formatear precio
     data.push({
       id: result.data.id,
       priceUsd: formattedPrice,
       image: arrayCoins[i].image,
-      explorer : result.data.explorer
+      explorer : result.data.explorer,
+      changePercent24Hr :formattedPricePercent,
     });
   }
 
@@ -37,7 +39,8 @@ const mappeoDato = (data) => {
     id: response.id,
     priceUsd: response.priceUsd,
     image: response.image,
-    explorer : response.explorer
+    explorer : response.explorer,
+    changePercent24Hr : response.changePercent24Hr,
   }));
 
   printGallery(dataMappeada);
@@ -55,6 +58,7 @@ const printGallery = (dataPrint) => {
         <h3>${response.id}</h3>
         <p>Precio: $${response.priceUsd}</p>
         <a target="_blank" href=${response.explorer}> Explorer <a>
+        <p>Cambio 24h %${response.changePercent24Hr}<p>
       </figure>
       
     `;
