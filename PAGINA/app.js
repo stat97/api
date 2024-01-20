@@ -24,6 +24,7 @@ const getData = async () => {
       id: result.data.id,
       priceUsd: formattedPrice,
       image: arrayCoins[i].image,
+      explorer : result.data.explorer
     });
   }
 
@@ -36,6 +37,7 @@ const mappeoDato = (data) => {
     id: response.id,
     priceUsd: response.priceUsd,
     image: response.image,
+    explorer : response.explorer
   }));
 
   printGallery(dataMappeada);
@@ -45,16 +47,18 @@ const printGallery = (dataPrint) => {
   console.log(dataPrint);
 
   dataPrint.forEach((response) => {
+    console.log(response.explorer)
     const figure = `
-    <a id="api" href="https://api.coincap.io/v2/assets">
+    
       <figure>
         <img src="${response.image}" alt="${response.id}" />
         <h3>${response.id}</h3>
         <p>Precio: $${response.priceUsd}</p>
+        <a target="_blank" href=${response.explorer}> Explorer <a>
       </figure>
-      <a>
+      
     `;
-    document.getElementById("app").innerHTML += figure;
+    document.querySelector("#app").innerHTML += figure;
   });
 };
 

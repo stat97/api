@@ -1,6 +1,7 @@
 figure {
   width: 250px;
-  height: 270px;
+  min-height: 280px;
+  /*height: 320px;*/
   border: 0.5px solid rgba(17, 17, 222, 0.496);
   border-radius: 30px;
   display: flex;
