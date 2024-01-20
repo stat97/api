@@ -14,24 +14,28 @@ const getData = async () => {
     { name: "chainlink", image: "./img/chainlink.png" },
     { name: "near-protocol", image: "./img/near.png" },
   ];
-
+  
   for (let i = 0; i < arrayCoins.length; i++) {
     const coin = arrayCoins[i].name;
     const response = await fetch(`https://api.coincap.io/v2/assets/${coin}`);
     const result = await response.json();
     const formattedPrice = parseFloat(result.data.priceUsd).toFixed(2);
     const formattedPricePercent = parseFloat(result.data.changePercent24Hr).toFixed(2); // metodo para formatear precio
+    const color = formattedPricePercent > 0 ? 'green' : 'red';
+    
     data.push({
       id: result.data.id,
       priceUsd: formattedPrice,
       image: arrayCoins[i].image,
       explorer : result.data.explorer,
       changePercent24Hr :formattedPricePercent,
+      color:color,
     });
   }
 
   mappeoDato(data);
 };
+
 
 const mappeoDato = (data) => {
   console.log(data);
@@ -41,6 +45,7 @@ const mappeoDato = (data) => {
     image: response.image,
     explorer : response.explorer,
     changePercent24Hr : response.changePercent24Hr,
+    color:response.color,
   }));
 
   printGallery(dataMappeada);
@@ -51,6 +56,7 @@ const printGallery = (dataPrint) => {
 
   dataPrint.forEach((response) => {
     console.log(response.explorer)
+    const colorStyle = `color: ${response.color};`
     const figure = `
     
       <figure>
@@ -58,7 +64,7 @@ const printGallery = (dataPrint) => {
         <h3>${response.id}</h3>
         <p>Precio: $${response.priceUsd}</p>
         <a target="_blank" href=${response.explorer}> Explorer <a>
-        <p>Cambio 24h %${response.changePercent24Hr}<p>
+        <p style="${colorStyle}">Cambio 24h ${response.changePercent24Hr}%</p>
       </figure>
       
     `;
