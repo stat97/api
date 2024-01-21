@@ -97,7 +97,7 @@ const printGallery = (dataPrint) => {
       </figure>
       
     `;
-    document.querySelector("#app").innerHTML += figure;
+    document.getElementById("app").innerHTML += figure;
   });
 };
 
