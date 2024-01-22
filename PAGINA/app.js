@@ -102,3 +102,19 @@ const printGallery = (dataPrint) => {
 };
 
 getData();
+
+const dynamicHeaderText = "Scroll down to see more ...";
+const dynamicTextElement = document.getElementById("dynamicText");
+
+const writeText = (text, index) => {
+    dynamicTextElement.innerHTML = text.slice(0, index);
+    if (index < text.length) {
+        setTimeout(() => {
+            writeText(text, index + 1);
+        }, 100); // Puedes ajustar el tiempo de espera (en milisegundos) según tus preferencias
+    }
+};
+
+writeText(dynamicHeaderText, 0);
+
+// Resto de tu código aquí...
